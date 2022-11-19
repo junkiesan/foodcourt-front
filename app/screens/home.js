@@ -12,7 +12,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      namer: '',
     };
   }
 
@@ -21,14 +21,14 @@ export default class Home extends Component {
   }
 
   _createWorkshop = () => {
-    const {text} = this.state;
-    const workshop = {text};
+    const {name} = this.state;
+    const workshop = {name};
     this.props.actions.createWorkshop(workshop);
-    this.setState({text: ''});
+    this.setState({name: ''});
   };
 
   _renderWorkshop(workshop) {
-    return <Text>{workshop.text}</Text>;
+    return <Text>{workshop.name}</Text>;
   }
 
   _renderWorkshops() {
@@ -46,9 +46,9 @@ export default class Home extends Component {
       <View>
         <TextInput
           style={styles.textfield}
-          placeholder={'Text'}
-          onChangeText={text => this.setState({text})}
-          value={this.state.text}
+          placeholder={'Name'}
+          onChangeText={name => this.setState({name})}
+          value={this.state.name}
         />
         <Button title="Create" onPress={this._createWorkshop} />
       </View>

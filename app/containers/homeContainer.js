@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Home from '../screens/home';
-import * as workshopsActions from '../actions/workshopsActions';
+import * as workshopsActions from '../actions/workshopActions';
 
 const mapStateToProps = state => ({  
   workshops: state.workshops,
